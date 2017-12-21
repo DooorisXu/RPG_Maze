@@ -1,6 +1,10 @@
 def instructions():
     #main menu
-print("RPG Game \n ======= \n Commands: \n go[direction] \n get[item]")
+
+'''
+The loop repeats infinitely, not taking any input, fix this
+'''
+    print("RPG Game \n ======= \n Commands: \n go[direction] \n get[item]")
 
 def status():
     #print the current status

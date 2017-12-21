@@ -27,3 +27,22 @@ rooms = {
             'north' : 'Hall'
         }
 }
+
+#start the player in the Hall
+currentRoom = 'Hall'
+
+instructions()
+
+#loop infinitely
+while True:
+    status()
+
+#get the player's move
+#.split breaks it up into an list array
+#eg: typing 'go east' would give the list ['go','east']
+
+move = ''
+while move == '':
+    move = input ('>')
+
+

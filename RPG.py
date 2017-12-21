@@ -45,4 +45,17 @@ move = ''
 while move == '':
     move = input ('>')
 
+move = move.lower().split()
+
+#if they type 'go' first
+if move[0] == 'go':
+    #check if the move is allowed
+    if move [1] in rooms [currentRoom]:
+        #set the current room to the new room
+        currentRoom = rooms [currentRoom][move[1]]
+        #there is no door (link) to the new room
+    else:
+        print('You can\'t go that way!')
+
+
 

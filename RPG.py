@@ -57,5 +57,19 @@ if move[0] == 'go':
     else:
         print('You can\'t go that way!')
 
+#if they type 'get' first
+if move [0] == 'get':
+    #if the move is allowed
+    if 'item' in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
+        #add the item to the inventory
+        inventory += move[1]
+        #display a movement complete message
+        print (move[1] + ' got!')
+        #delete the item from the room
+        del rooms[currentRoom]['item']
+    #otherwise (the item is not there to get)
+    else:
+        print('Can\'t get ', move[1], ' !')
+
 
 

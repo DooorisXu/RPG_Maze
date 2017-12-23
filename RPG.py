@@ -1,10 +1,6 @@
 def instructions():
-    #main menu
-
-'''
-The loop repeats infinitely, not taking any input, fix this
-'''
     print("RPG Game \n ======= \n Commands: \n go[direction] \n get[item]")
+
 
 def status():
     #print the current status
@@ -19,7 +15,7 @@ def status():
         print('You see a '+rooms[currentRoom]['item'])
     print('----------------------------')
 
-#initialize the inventory
+#initialize the inventory array
 inventory = []
 
 #link one room to another
@@ -40,7 +36,9 @@ instructions()
 #loop infinitely
 while True:
     status()
-
+'''
+status()
+'''
 #get the player's move
 #.split breaks it up into an list array
 #eg: typing 'go east' would give the list ['go','east']

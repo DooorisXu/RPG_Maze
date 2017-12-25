@@ -34,11 +34,9 @@ currentRoom = 'Hall'
 instructions()
 
 #loop infinitely
+
 while True:
     status()
-'''
-status()
-'''
 #get the player's move
 #.split breaks it up into an list array
 #eg: typing 'go east' would give the list ['go','east']

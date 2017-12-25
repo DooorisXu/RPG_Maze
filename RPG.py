@@ -20,20 +20,23 @@ inventory = []
 
 #link one room to another
 rooms = {
-        'Hall':{
-            'south' : 'Kitchen',
-            'west' : 'Dining Room',
-            'item' : 'key'
+        'Hall': {
+            'south': 'Kitchen',
+            'west': 'Dining Room',
+            'item': 'key'
         },
-        'Kitchen':{
-            'north' : 'Hall',
-            'item' : 'ration',
-            'item' : 'knives'
-        }
-        'Dining Room':{
-            'east' : 'Hall',
-            'item' : 'piano'
-
+        'Kitchen': {
+            'north': 'Hall',
+            'south': 'Basement',
+            'item': 'ration',
+            'item': 'knives'
+        },
+        'Dining Room': {
+            'east': 'Hall',
+            'item': 'piano'
+        },
+        'Basement': {
+            'north': 'Kitchen'
         }
 }
 
@@ -45,7 +48,6 @@ instructions()
 #loop infinitely
 while True:
     status()
-
 #get the player's move
 #.split breaks it up into an list array
 #eg: typing 'go east' would give the list ['go','east']
@@ -53,6 +55,10 @@ while True:
 move = ''
 while move == '':
     move = input ('>')
+    # player loses if the enter a room with a monster
+    if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
+        print('A monster has got you...\n GAME OVER')
+        break
 
 move = move.lower().split()
 
@@ -79,6 +85,7 @@ if move [0] == 'get':
     #otherwise (the item is not there to get)
     else:
         print('Can\'t get ', move[1], ' !')
+
 
 
 

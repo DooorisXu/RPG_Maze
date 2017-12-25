@@ -21,10 +21,19 @@ inventory = []
 #link one room to another
 rooms = {
         'Hall':{
-            'south' : 'Kitchen'
+            'south' : 'Kitchen',
+            'west' : 'Dining Room',
+            'item' : 'key'
         },
         'Kitchen':{
-            'north' : 'Hall'
+            'north' : 'Hall',
+            'item' : 'ration',
+            'item' : 'knives'
+        }
+        'Dining Room':{
+            'east' : 'Hall',
+            'item' : 'piano'
+
         }
 }
 
@@ -34,9 +43,9 @@ currentRoom = 'Hall'
 instructions()
 
 #loop infinitely
-
 while True:
     status()
+
 #get the player's move
 #.split breaks it up into an list array
 #eg: typing 'go east' would give the list ['go','east']

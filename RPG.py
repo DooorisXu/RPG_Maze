@@ -23,7 +23,8 @@ rooms = {
         'Hall': {
             'south': 'Kitchen',
             'west': 'Dining Room',
-            'item': 'key'
+            'item': 'key',
+            'east': 'garden'
         },
         'Kitchen': {
             'north': 'Hall',
@@ -33,7 +34,8 @@ rooms = {
         },
         'Dining Room': {
             'east': 'Hall',
-            'item': 'piano'
+            'item': 'piano',
+            'item': 'magic potion'
         },
         'Basement': {
             'north': 'Kitchen'
@@ -58,6 +60,10 @@ while move == '':
     # player loses if the enter a room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
         print('A monster has got you...\n GAME OVER')
+        break
+    # player wins if they get to the garden with a key and the magic potion
+    if currentRoom == 'Garden' and 'key' in inventory and 'magic potion' in inventory:
+        print('You escaped the house...\n YOU WON!')
         break
 
 move = move.lower().split()

@@ -1,9 +1,9 @@
 def instructions():
-    print("RPG Game \n ======= \n Commands: \n go[direction] \n get[item]")
-    print('You have to escape the house \n using the commands above ')
-    print('To escape, you need to go to the garden \n with a key and a magic potion')
-    print('If you walk into a room with a monster in it \n You lose the game ')
-    print('=======')
+    print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
+    print('\tYou have to escape the house \n\tusing the commands above. ')
+    print('\tTo escape, you need to go to the garden \n\twith a key and a magic potion.')
+    print('\tIf you walk into a room with a monster in it, \n\tyou lose the game ')
+    print('\t====================================================')
 
 
 

@@ -1,7 +1,11 @@
+
+# need to fix the inventory array
+# the player cannot escape the house as a result of the inventory bug
+
 def instructions():
     print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
     print('\tYou have to escape the house \n\tusing the commands above. ')
-    print('\tTo escape, you need to go to the garden \n\twith a key and a magic potion.')
+    print('\tTo escape, you need to go to the garden \n\twith a key and a magic.')
     print('\tIf you walk into a room with a monster in it, \n\tyou lose the game ')
     print('\t====================================================')
 
@@ -41,7 +45,7 @@ rooms = {
         },
         'Living Room': {
             'east': 'Kitchen',
-            'item': 'magic potion'
+            'item': 'magic'
         },
         'Basement': {
             'north': 'Garden',
@@ -70,8 +74,8 @@ while True:
         if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
             print('A monster has got you...\n GAME OVER')
         break
-    # player wins if they get to the garden with a key and the magic potion
-        if currentRoom == 'Garden' and 'key' in inventory and 'magic potion' in inventory:
+    # player wins if they get to the garden with a key and the magic
+        if currentRoom == 'Garden' and 'key' in inventory and 'magic' in inventory:
          print('You escaped the house...\n YOU WON!')
         break
 
@@ -88,13 +92,13 @@ while True:
             print('You can\'t go that way!')
 
     #if they type 'get' first
-    if move [0] == 'get':
+    if move[0] == 'get':
         #if the move is allowed
         if 'item' in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
             #add the item to the inventory
             inventory += move[1]
             #display a movement complete message
-            print (move[1] + ' got!')
+            print(move[1] + ' got!')
             #delete the item from the room
             del rooms[currentRoom]['item']
         #otherwise (the item is not there to get)

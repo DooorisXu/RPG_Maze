@@ -69,7 +69,7 @@ while True:
 #eg: typing 'go east' would give the list ['go','east']
     move = ''
     while move == '':
-        move = input ('>')
+        move = input('>')
     # player loses if the enter a room with a monster
         if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
             print('A monster has got you...\n GAME OVER')

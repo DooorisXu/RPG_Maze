@@ -1,7 +1,8 @@
 
-# need to fix the inventory array
-# the player cannot escape the house as a result of the inventory bug
-
+# something is wrong with the map
+# need to work on how to end the game
+# the player cannot lose the game because of the monster
+# the player cannot win the game when he/she gets to the garden with the key and the magic
 def instructions():
     print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
     print('\tYou have to escape the house \n\tusing the commands above. ')

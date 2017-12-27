@@ -94,11 +94,12 @@ while True:
         else:
             print('Can\'t get ', move[1], ' !')
 
+# player wins if they get to the garden with a key and the magic
+    if currentRoom == 'Garden' and 'key' in inventory and 'magic' in inventory:
+        print('You escaped the house...\n YOU WON!')
+        break
 # player loses if the enter a room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
         print('A monster has got you...\n GAME OVER')
         break
-    # player wins if they get to the garden with a key and the magic
-    if currentRoom == 'Garden' and 'k' in inventory and 'm' in inventory:
-        print('You escaped the house...\n YOU WON!')
-        break
+

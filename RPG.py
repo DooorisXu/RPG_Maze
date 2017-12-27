@@ -1,7 +1,5 @@
-
-# need to work on how to end the game
-# the player cannot lose the game because of the monster
-# the player cannot win the game when he/she gets to the garden with the key and the magic
+# the problem with the end of the game is caused by the break statement in the last two if statements
+# probably the indentation
 def instructions():
     print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
     print('\tYou have to escape the house \n\tusing the commands above. ')
@@ -99,8 +97,8 @@ while True:
 # player loses if the enter a room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
         print('A monster has got you...\n GAME OVER')
-    break
+        break
     # player wins if they get to the garden with a key and the magic
     if currentRoom == 'Garden' and 'k' in inventory and 'm' in inventory:
         print('You escaped the house...\n YOU WON!')
-    break
+        break

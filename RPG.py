@@ -13,16 +13,16 @@ def instructions():
 
 def status():
     #print the current status
-    print('----------------------------')
-    print('You are in the '+currentRoom)
+    print('\t----------------------------')
+    print('\tYou are in the '+currentRoom)
 
     #print the current inventory
-    print('Inventory: ', str(inventory))
+    print('\tInventory: ', list(inventory))
 
     #print an item if exists
     if "item" in rooms [currentRoom]:
-        print('You see a '+rooms[currentRoom]['item'])
-    print('----------------------------')
+        print('\tYou see a '+rooms[currentRoom]['item'])
+    print('\t----------------------------')
 
 #initialize the inventory array
 inventory = []
@@ -75,7 +75,7 @@ while True:
             print('A monster has got you...\n GAME OVER')
         break
     # player wins if they get to the garden with a key and the magic
-        if currentRoom == 'Garden' and 'key' in inventory and 'magic' in inventory:
+        if currentRoom == 'Garden' and 'k' in inventory and 'm' in inventory:
          print('You escaped the house...\n YOU WON!')
         break
 
@@ -84,7 +84,7 @@ while True:
     #if they type 'go' first
     if move[0] == 'go':
         #check if the move is allowed
-        if move [1] in rooms [currentRoom]:
+        if move[1] in rooms [currentRoom]:
             #set the current room to the new room
             currentRoom = rooms [currentRoom][move[1]]
             #there is no door (link) to the new room
@@ -96,7 +96,7 @@ while True:
         #if the move is allowed
         if 'item' in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
             #add the item to the inventory
-            inventory += move[1]
+            inventory.append(move[1])
             #display a movement complete message
             print(move[1] + ' got!')
             #delete the item from the room

@@ -1,5 +1,4 @@
 
-# something is wrong with the map
 # need to work on how to end the game
 # the player cannot lose the game because of the monster
 # the player cannot win the game when he/she gets to the garden with the key and the magic

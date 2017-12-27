@@ -3,9 +3,11 @@
 
 def instructions():
     print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
-    print('\tYou have to escape the house \n\tusing the commands above. ')
-    print('\tTo escape, you need to go to the garden \n\twith a key and a magic.')
-    print('\tIf you walk into a room with a monster in it, \n\tyou lose the game ')
+    print('\tLong long ago, in a galaxy far far away \n\tThe Empire is building another Death Star')
+    print('\tTo restore the peace and order to the galaxy, \n\tthe rebellion must destory the Death Star')
+    print('\tYou need to go to the central control room \n\twith the code breaker and the mechanic')
+    print('\t to destroy the Death Star')
+    print('\tIf you run into Darth Vedar\n\tyou lose the game ')
     print('\t====================================================')
 
 
@@ -18,7 +20,7 @@ def status():
     print('\tInventory: ', list(inventory))
 
     #print an item if exists
-    if "item" in rooms [currentRoom]:
+    if "item" in rooms[currentRoom]:
         print('\tYou see a '+rooms[currentRoom]['item'])
     print('\t----------------------------')
 
@@ -27,38 +29,38 @@ inventory = []
 
 #link one room to another
 rooms = {
-        'Hall': {
-            'north': 'Kitchen',
-            'east': 'Garden',
-            'south': 'Bedroom'
+        'Training Deck': {
+            'north': 'Armery',
+            'east': 'Control Room',
+            'south': 'Clinic'
         },
-        'Bedroom': {
-            'north': 'Hall',
-            'east': 'Basement',
-            'item': 'monster'
+        'Clinic': {
+            'north': 'Training Deck',
+            'east': 'Power Generator',
+            'item': 'Darth Vedar'
         },
-        'Kitchen': {
-            'south': 'Hall',
-            'west': 'Living Room'
+        'Armery': {
+            'south': 'Training Deck',
+            'west': 'Testing Room'
         },
-        'Living Room': {
-            'east': 'Kitchen',
-            'item': 'magic'
+        'Testing Room': {
+            'east': 'Armery',
+            'item': 'mechanic'
         },
-        'Basement': {
-            'north': 'Garden',
-            'west': 'Bedroom',
-            'item': 'key'
+        'Power Generator': {
+            'north': 'Control Room',
+            'west': 'Clinic',
+            'item': 'code breaker'
         },
-        'Garden':{
-            'south': 'Basement',
-            'west': 'Hall'
+        'Control Room': {
+            'south': 'Power Generator',
+            'west': 'Training Deck'
         }
 }
 
 #start the player in the Hall
 instructions()
-currentRoom = 'Hall'
+currentRoom = 'Training Deck'
 
 while True:
     status()
@@ -95,11 +97,11 @@ while True:
             print('Can\'t get ', move[1], ' !')
 
 # player wins if they get to the garden with a key and the magic
-    if currentRoom == 'Garden' and 'key' in inventory and 'magic' in inventory:
-        print('You escaped the house...\n YOU WON!')
+    if currentRoom == 'Control Room' and 'mechanic' in inventory and 'code breaker' in inventory:
+        print('You estroyed the death star...\n YOU WON!')
         break
 # player loses if the enter a room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
-        print('A monster has got you...\n GAME OVER')
+        print('Darth Vedar has got you...\n GAME OVER')
         break
 

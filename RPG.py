@@ -59,8 +59,8 @@ rooms = {
 }
 
 #start the player in the Hall
-currentRoom = 'Hall'
 instructions()
+currentRoom = 'Hall'
 
 while True:
     status()
@@ -70,15 +70,6 @@ while True:
     move = ''
     while move == '':
         move = input('>')
-    # player loses if the enter a room with a monster
-        if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
-            print('A monster has got you...\n GAME OVER')
-        break
-    # player wins if they get to the garden with a key and the magic
-        if currentRoom == 'Garden' and 'k' in inventory and 'm' in inventory:
-         print('You escaped the house...\n YOU WON!')
-        break
-
     move = move.lower().split()
 
     #if they type 'go' first
@@ -104,3 +95,12 @@ while True:
         #otherwise (the item is not there to get)
         else:
             print('Can\'t get ', move[1], ' !')
+
+# player loses if the enter a room with a monster
+    if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
+        print('A monster has got you...\n GAME OVER')
+    break
+    # player wins if they get to the garden with a key and the magic
+    if currentRoom == 'Garden' and 'k' in inventory and 'm' in inventory:
+        print('You escaped the house...\n YOU WON!')
+    break

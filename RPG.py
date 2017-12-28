@@ -1,5 +1,6 @@
 # the problem with the end of the game is caused by the break statement in the last two if statements
 # probably the indentation
+# this is to show Skittles the git shortcut
 def instructions():
     print("\t==================================================== \n\tCommands: \n\tgo[direction] \n\tget[item]")
     print('\tYou have to escape the house \n\tusing the commands above. ')
